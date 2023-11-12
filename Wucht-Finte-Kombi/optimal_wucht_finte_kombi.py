@@ -97,4 +97,35 @@ for i in range(len(PA_Liste)):
 
 ax[0].set_ylabel('Finte')
 plt.legend()
+plt.show(block=False)
+
+# compare with formula from https://de.wiki-aventurica.de/wiki/Optimale_Finte-Wuchtschlag-Kombination
+fig2, ax2 = plt.subplots(1, 4)
+
+a = range(1,40) # AT
+b = [5,10,15,20] # PA
+dmg_base = [5, 10, 15, 20]
+RS = 0
+Z = dmg_base
+
+for i in range(len(b)):
+    PA = b[i]
+    for Schaden in Z:
+        Wucht_Liste = []
+        Finte_Liste = []
+        for AT in a:
+            #Schaden_list, optimale_Ansage = Wuchtschlag_Finte_Optimizer(AT, PA, Schaden)
+            f_opt = (AT + 2*PA + Schaden - 40) / 3
+            w_opt = (AT - PA - 2*Schaden + 20) / 3
+            Finte_Liste.append(f_opt)
+            Wucht_Liste.append(w_opt)
+        ax2[i].plot(Wucht_Liste, Finte_Liste, label=str(Schaden), marker='s', markersize=Schaden / 5,
+                   zorder=20 - Schaden)
+        ax2[i].set_xlabel('Wucht')
+        ax2[i].set_xlim((-1, 20))
+        ax2[i].set_ylim((-1, 20))
+        ax2[i].set_title('PA:' + str(PA))
+
+ax2[0].set_ylabel('Finte')
+plt.legend()
 plt.show()

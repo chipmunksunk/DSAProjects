@@ -95,8 +95,8 @@ def documented_exchange_of_blows(attacker, defender, Wucht, Finte):
 
 ##### Ausführbare Abläufe #####
 def run1():
-    Murgrimm = character_creation("Murgrimm", 15, 10, 40, 20, 10, 4).character_values()
-    Alrik = character_creation("Alrik", 12, 12, 30, 20, 8, 2).character_values()
+    Murgrimm = character_creation("Murgrimm", 20, 15, 40, 20, 10, 4).character_values()
+    Alrik = character_creation("Alrik", 22, 12, 30, 20, 8, 2).character_values()
 
     counter_Kampfrunde = 0
     while Murgrimm["Lebenspunkte"] >= 0 and Alrik["Lebenspunkte"] >= 0:
@@ -108,8 +108,8 @@ def run1():
 
 
 def run2():
-    Angreifer = character_creation("Angreifer", 15, 15, 40, 14, 10, 4).character_values()
-    Verteidiger = character_creation("Verteidiger", 15, 15, 40, 14, 10, 4).character_values()
+    Angreifer = character_creation("Angreifer", 20, 15, 40, 14, 10, 4).character_values()
+    Verteidiger = character_creation("Verteidiger", 22, 12, 40, 14, 10, 4).character_values()
 
     repetitions = 10000
 
@@ -160,5 +160,5 @@ def run2():
     plt.show()
 
 
-run2()
-
+# run2()
+run1()

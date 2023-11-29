@@ -92,7 +92,6 @@ def documented_exchange_of_blows(attacker, defender, Wucht, Finte):
 
     return attackbool, paradebool, damage
 
-
 ##### Ausführbare Abläufe #####
 def run1():
     Murgrimm = character_creation("Murgrimm", 15, 10, 40, 20, 10, 4).character_values()

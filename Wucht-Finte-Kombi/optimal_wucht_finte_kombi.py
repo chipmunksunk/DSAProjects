@@ -63,6 +63,7 @@ def Wuchtschlag_Finte_Optimizer(AT_eigen, PA_gegner, Schaden_eigen):
 
     return dmg_dealt_list, optimal_wucht_finte
 
+
 def ax_plot(x, y_list, ax, x_label, y_label, title, label_list):
     for y, label in zip(y_list, label_list):
         ax.plot(x, y, label=str(label))
@@ -147,3 +148,7 @@ def run_3():  # erstellt ein Array mit Einträgen für die optimalen Wucht-Finte
                 opt_wucht_finte_array[ind_AT, ind_PA, ind_Schaden, 1] = opt_wucht_finte[1]
 
     np.save("opt_wucht_finte_file", opt_wucht_finte_array)
+
+
+empty, Wucht_Finte = Wuchtschlag_Finte_Optimizer(15, 12, 5)
+print(Wucht_Finte)

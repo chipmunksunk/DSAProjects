@@ -108,7 +108,7 @@ def run1():
 
 
 def run2():
-    Angreifer = character_creation("Angreifer", 20, 15, 40, 14, 10, 4).character_values()
+    Angreifer = character_creation("Angreifer", 15, 15, 40, 14, 10, 4).character_values()
     Verteidiger = character_creation("Verteidiger", 15, 15, 40, 14, 10, 4).character_values()
 
     repetitions = 10000
